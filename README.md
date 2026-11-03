@@ -46,3 +46,7 @@ The main demonstration uses the user-provided `LOTUSim_with_map_inset_2x.mp4` re
 ## Animated mission replays
 
 The 3/4/5-UAV viewer now displays actual looping GIFs converted from the recorded MP4 replays (640 px wide, 10 fps, 128-colour palette). The initial hold on the previous mission’s finished screen is removed: 6.497 s for three UAVs, 4.606 s for four UAVs and 2.793 s for five UAVs. Each GIF starts at the new mission; subsequent replay timing and the displayed mission metrics are unchanged. Team buttons switch the animation, metrics and GIF download link together. A stop/play control shows a static poster when stopped, and reduced-motion preferences start the viewer on that poster. The large LOTUSim simulator recording remains an MP4 video with manual playback controls.
+
+## Team-size trajectories
+
+The visible “Exploration with Different Team Sizes” section uses the existing `lotusim-top-team-size.svg` from the CROSSING resource-page assets. It shows the same three recorded missions as the GIFs (3/4/5 UAVs), with per-UAV paths, time to 95% coverage and total team flight distance. These are single-mission examples, not a repeated team-size benchmark. The Motivation & Contributions section has been removed; the Method navigation link points directly to Training & Deployment.
