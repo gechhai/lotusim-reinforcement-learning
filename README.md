@@ -42,3 +42,7 @@ Adapted from [Academic Project Page Template](https://github.com/eliahuhorwitz/A
 ## Featured LOTUSim recording
 
 The main demonstration uses the user-provided `LOTUSim_with_map_inset_2x.mp4` recording, supplied on 3 November 2026. Its 2× playback speed is already baked into the source; the player does not apply another speed multiplier. A web copy at the original 1920 × 1080 resolution is encoded as H.264/yuv420p at 30 fps with fast-start metadata and optional AAC audio. The complete frame and map inset are retained. The original 83 MB recording is unchanged and is not included in the website repository. The poster is a frame taken 12 seconds into the supplied recording. The separate 3/4/5-UAV data-replay viewer remains available below the main video.
+
+## Animated mission replays
+
+The 3/4/5-UAV viewer now displays actual looping GIFs converted from the recorded MP4 replays (640 px wide, 10 fps, 128-colour palette). The original replay timing is retained. Team buttons switch the animation, metrics and GIF download link together. A stop/play control shows a static poster when stopped, and reduced-motion preferences start the viewer on that poster. The large LOTUSim simulator recording remains an MP4 video with manual playback controls.

@@ -3,21 +3,30 @@ const missions = {
   4: { time: '116 s', distance: '704 m', description: 'Four UAVs using the same actor, without retraining.' },
   5: { time: '129 s', distance: '875 m', description: 'Five UAVs using the same actor, without retraining.' }
 };
-const video = document.getElementById('mission-video');
+const replay = document.getElementById('mission-replay');
 const buttons = document.querySelectorAll('[data-team]');
+const toggle = document.getElementById('toggle-animation');
+let activeTeam = '3';
+let animating = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function updateReplay() {
+  replay.src = `assets/replays/replay-${activeTeam}-uavs.${animating ? 'gif' : 'jpg'}`;
+  replay.alt = `${animating ? 'Looping GIF' : 'Still image'} of the recorded ${activeTeam}-UAV exploration mission`;
+  toggle.textContent = animating ? 'Stop animation' : 'Play animation';
+  toggle.setAttribute('aria-pressed', String(animating));
+}
+toggle.addEventListener('click', () => {
+  animating = !animating;
+  updateReplay();
+});
 buttons.forEach(button => button.addEventListener('click', () => {
   if (button.getAttribute('aria-pressed') === 'true') return;
-  const team = button.dataset.team;
-  const mission = missions[team];
-  video.pause();
-  video.poster = `assets/replays/replay-${team}-uavs.jpg`;
-  video.querySelector('source').src = `assets/replays/replay-${team}-uavs.mp4`;
-  video.querySelector('a').href = `assets/replays/replay-${team}-uavs.mp4`;
-  video.setAttribute('aria-label', `${team} UAV mission replay`);
-  video.load();
+  activeTeam = button.dataset.team;
+  const mission = missions[activeTeam];
+  updateReplay();
   buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
   document.getElementById('mission-time').textContent = mission.time;
   document.getElementById('mission-distance').textContent = mission.distance;
   document.getElementById('mission-description').textContent = mission.description;
-  document.getElementById('download-replay').href = `assets/replays/replay-${team}-uavs.mp4`;
+  document.getElementById('download-replay').href = `assets/replays/replay-${activeTeam}-uavs.gif`;
 }));
+updateReplay();
