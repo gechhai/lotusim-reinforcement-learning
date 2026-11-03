@@ -9,7 +9,7 @@ const toggle = document.getElementById('toggle-animation');
 let activeTeam = '3';
 let animating = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 function updateReplay() {
-  replay.src = `assets/replays/replay-${activeTeam}-uavs.${animating ? 'gif' : 'jpg'}`;
+  replay.src = `assets/replays/replay-${activeTeam}-uavs.${animating ? 'gif?v=2' : 'jpg'}`;
   replay.alt = `${animating ? 'Looping GIF' : 'Still image'} of the recorded ${activeTeam}-UAV exploration mission`;
   toggle.textContent = animating ? 'Stop animation' : 'Play animation';
   toggle.setAttribute('aria-pressed', String(animating));
@@ -27,6 +27,6 @@ buttons.forEach(button => button.addEventListener('click', () => {
   document.getElementById('mission-time').textContent = mission.time;
   document.getElementById('mission-distance').textContent = mission.distance;
   document.getElementById('mission-description').textContent = mission.description;
-  document.getElementById('download-replay').href = `assets/replays/replay-${activeTeam}-uavs.gif`;
+  document.getElementById('download-replay').href = `assets/replays/replay-${activeTeam}-uavs.gif?v=2`;
 }));
 updateReplay();

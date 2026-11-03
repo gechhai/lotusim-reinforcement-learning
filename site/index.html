@@ -37,7 +37,7 @@
 <h2 class="replay-heading">Recorded Mission Replays</h2>
 <div class="demo-layout">
 <figure class="mission-viewer">
-<img id="mission-replay" src="assets/replays/replay-3-uavs.gif" width="640" height="646" loading="lazy" alt="Looping GIF of the recorded three-UAV exploration mission">
+<img id="mission-replay" src="assets/replays/replay-3-uavs.gif?v=2" width="640" height="646" loading="lazy" alt="Looping GIF of the recorded three-UAV exploration mission">
 <div class="animation-controls"><button id="toggle-animation" type="button" aria-pressed="true" aria-controls="mission-replay">Stop animation</button></div>
 <figcaption>Looping GIF of an accelerated 3D replay reconstructed from a recorded mission. Colours show each UAV’s explored space; black blocks show detected mines. This is a data replay, not a camera recording.</figcaption>
 </figure>
@@ -46,9 +46,9 @@
 <div class="mission-switcher" role="group" aria-label="Choose a mission replay"><button type="button" aria-pressed="true" data-team="3">3 UAVs</button><button type="button" aria-pressed="false" data-team="4">4 UAVs</button><button type="button" aria-pressed="false" data-team="5">5 UAVs</button></div>
 <div id="mission-summary" aria-live="polite"><dl class="mission-stats"><div><dt>Time to 95%</dt><dd id="mission-time">170 s</dd></div><div><dt>Team flight distance</dt><dd id="mission-distance">827 m</dd></div></dl><p id="mission-description" class="fine-print">Three UAVs using the shared policy trained with three agents.</p></div>
 <p class="fine-print">One recorded mission per team size. These examples show transfer without retraining; they do not establish a scaling trend.</p>
-<a id="download-replay" class="text-link" href="assets/replays/replay-3-uavs.gif" download>Download this GIF <span aria-hidden="true">↓</span></a>
+<a id="download-replay" class="text-link" href="assets/replays/replay-3-uavs.gif?v=2" download>Download this GIF <span aria-hidden="true">↓</span></a>
 </div></div>
-<noscript><p>Other mission GIFs: <a href="assets/replays/replay-4-uavs.gif">4 UAVs</a> · <a href="assets/replays/replay-5-uavs.gif">5 UAVs</a>.</p></noscript>
+<noscript><p>Other mission GIFs: <a href="assets/replays/replay-4-uavs.gif?v=2">4 UAVs</a> · <a href="assets/replays/replay-5-uavs.gif?v=2">5 UAVs</a>.</p></noscript>
 </section>
 <section id="abstract" class="abstract-band"><div class="reading-width"><h2>Abstract</h2><p>Exploring efficiently means balancing nearby targets against areas that could reveal more unknown space. This project learns that balance with multi-agent reinforcement learning: a shared policy chooses a distance–information weight for each UAV, while frontier selection and a 3D A* planner turn that weight into a target and route.</p><p>The policy is trained in a lightweight voxel simulator and then used inside LOTUSim. Unity supplies range measurements, the exploration host updates and fuses maps, and PX4 executes the planned waypoints. The learned policy selects exploration behaviour; it does not directly command motors.</p></div></section>
 <section id="contributions" class="contribution-band"><div class="shell content-section">
