@@ -50,3 +50,7 @@ The 3/4/5-UAV viewer now displays actual looping GIFs converted from the recorde
 ## Team-size trajectories
 
 The visible “Exploration with Different Team Sizes” section uses the existing `lotusim-top-team-size.svg` from the CROSSING resource-page assets. It shows the same three recorded missions as the GIFs (3/4/5 UAVs), with per-UAV paths, time to 95% coverage and total team flight distance. These are single-mission examples, not a repeated team-size benchmark. The Motivation & Contributions section has been removed; the Method navigation link points directly to Training & Deployment.
+
+## Resource links and attribution
+
+The page no longer links to the offline benchmark evidence or training environment JSON, including their duplicate links in the hero and method sections. Archived assets and the saved report are retained. Related work now leads with FA-MARL and explicitly credits its frontier-assignment approach as the basis for this project’s 3D adaptation. The citation is taken from the locally saved Song and Yang ICCA 2026 paper, DOI `10.1109/ICCA69928.2026.11618240`.
