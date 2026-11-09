@@ -1,6 +1,36 @@
-# Cooperative UAV Exploration in LOTUSim
+# Cooperative UAV Exploration with Multi-Agent Reinforcement Learning
 
-A standalone academic project website, independent of the CROSSING repository. Source and deployments can be maintained without rebuilding the institutional site. No authors or affiliations are displayed yet.
+**🌐 Project website: https://gechhai.github.io/lotusim-reinforcement-learning/**
+
+[![Website](https://img.shields.io/badge/Project-Website-4457e8)](https://gechhai.github.io/lotusim-reinforcement-learning/)
+[![Videos](https://img.shields.io/badge/Watch-Videos-de934c)](https://gechhai.github.io/lotusim-reinforcement-learning/#demonstrations)
+[![LOTUSim](https://img.shields.io/badge/Simulator-LOTUSim-168b78)](https://irl-crossing-cnrs.github.io/projects/lotusim)
+
+This repository holds the source of the project website. Open the website to see the demonstration video, animated mission replays, method and benchmark results.
+
+## About the project
+
+A shared MAPPO policy teaches a team of UAVs to balance **travel distance** against **new information** when choosing where to explore next. For each UAV, the policy chooses a distance–information weight. Frontier selection and a 3D A\* planner then turn that weight into a target and a route. The policy is trained in a lightweight 3D voxel simulator and then used inside [LOTUSim](https://irl-crossing-cnrs.github.io/projects/lotusim), where Unity provides range sensing and PX4 flies the planned waypoints.
+
+![Training and deployment pipeline](site/assets/pipeline.png)
+
+In a fixed simulated LOTUSim minefield, three UAVs ran 10 missions per method. The learned policy reached 95% coverage in **203.0 ± 23.4 s**. The nearest-frontier baseline took 430.3 ± 50.7 s and Voronoi assignment took 436.3 ± 45.4 s. The learned policy also flew about 43% less total distance than nearest-frontier. These are simulation results only. The website gives full details and caveats.
+
+| On the website | Link |
+|---|---|
+| LOTUSim demonstration video and mission replays (3, 4, 5 UAVs) | [Demonstrations](https://gechhai.github.io/lotusim-reinforcement-learning/#demonstrations) |
+| Abstract | [Abstract](https://gechhai.github.io/lotusim-reinforcement-learning/#abstract) |
+| Training and deployment pipeline | [Method](https://gechhai.github.io/lotusim-reinforcement-learning/#method) |
+| Trajectories for different team sizes | [Trajectories](https://gechhai.github.io/lotusim-reinforcement-learning/#trajectories) |
+| Benchmark against classical baselines | [Results](https://gechhai.github.io/lotusim-reinforcement-learning/#results) |
+
+## Repository layout
+
+- `site/index.html`: page content
+- `site/style.css`: layout and typography
+- `site/app.js`: mission replay selector (3, 4 and 5 UAVs)
+- `site/assets/`: figures, demonstration video, replays and configuration files
+- `.github/workflows/pages.yml`: deploys `site/` to GitHub Pages on every push to `main`
 
 ## Preview locally
 
@@ -8,49 +38,8 @@ A standalone academic project website, independent of the CROSSING repository. S
 python3 -m http.server 5174 --bind 127.0.0.1 --directory site
 ```
 
-Open http://127.0.0.1:5174. No package installation or build is required.
+Then open http://127.0.0.1:5174. You don't need to install anything or run a build.
 
-## Edit
+## Credits
 
-- `site/index.html`: project narrative, results, download links and attribution.
-- `site/style.css`: responsive layout and typography.
-- `site/app.js`: replay selector (3, 4 and 5 UAVs).
-- `site/assets/replays/`: MP4 recordings and posters, approximately 1 MB per video.
-- `site/assets/pipeline.png`: reviewed training/deployment figure.
-- `.openai/hosting.json`: private preview hosting identity; contains no credentials.
-
-Videos are loaded only on demand, with native playback controls, no autoplay and local posters. Larger future recordings can use external hosting by changing the source URLs in `app.js` and the initial video in `index.html`.
-
-## Deployment
-
-Upload the contents of `site/` to any static host. All local links are relative, so the website works under a GitHub Pages repository subpath as well as a standalone domain. The source repository should remain private. A public project website does not require making its source repository public; use a host that supports private-source builds. GitHub Pages availability for private repositories depends on the account's plan.
-
-The initial hosted preview is owner-private. Publishing a public research URL is separate from the private GitHub source repository. Do not add a private preview URL to CROSSING as a public project link.
-
-CROSSING is intentionally unchanged. When a public project URL is ready, the institutional page can retain an overview and link to this site's demonstrations.
-
-## Content provenance
-
-The methodology, figures, compressed videos and results come from the existing local CROSSING LOTUSim resource page. An exact source-page snapshot is retained in `docs/source-crossing-page.tsx` for traceability. The offline benchmark JSON and training report have a different scope from the LOTUSim repeated mission results; labels on the page distinguish them.
-
-The replay videos visualize recorded mission data (27 October 2026), rather than camera captures. Each team-size replay is one mission; repeated benchmark results use ten missions per method with three UAVs. No physical-flight claim is made.
-
-## Template attribution
-
-Adapted from [Academic Project Page Template](https://github.com/eliahuhorwitz/Academic-project-page-template), commit `d38af1ccae1ce82c3404d2820c4c646afd409f81`, itself derived from [Nerfies](https://nerfies.github.io/). We retain its Bulma stylesheet and academic page structure. The current visual layout follows [C²-Explorer](https://robotics-star.com/C2-Explorer/): a dark simulation hero, centered project identity, sans-serif typography, orange/blue expandable method panels and a highlighted benchmark table. C²-Explorer is credited in the footer. The hero uses LOTUSim-Energy aerial imagery from the local CROSSING website and the LOTUSim logo from the local project presentation; no C²-Explorer research images, authors or results are copied. Template documentation and its CC BY-SA 4.0 notice are preserved in `docs/template-original-readme.md`, and the site footer retains attribution. Research data and media retain their existing rights; the template license is not a claim to relicense those materials.
-
-## Featured LOTUSim recording
-
-The main demonstration uses the user-provided `LOTUSim_with_map_inset_2x.mp4` recording, supplied on 3 November 2026. Its 2× playback speed is already baked into the source; the player does not apply another speed multiplier. A web copy at the original 1920 × 1080 resolution is encoded as H.264/yuv420p at 30 fps with fast-start metadata and optional AAC audio. The complete frame and map inset are retained. The original 83 MB recording is unchanged and is not included in the website repository. The poster is a frame taken 12 seconds into the supplied recording. The separate 3/4/5-UAV data-replay viewer remains available below the main video.
-
-## Animated mission replays
-
-The 3/4/5-UAV viewer now displays actual looping GIFs converted from the recorded MP4 replays (640 px wide, 10 fps, 128-colour palette). The initial hold on the previous mission’s finished screen is removed: 6.497 s for three UAVs, 4.606 s for four UAVs and 2.793 s for five UAVs. Each GIF starts at the new mission; subsequent replay timing and the displayed mission metrics are unchanged. Team buttons switch the animation, metrics and GIF download link together. A stop/play control shows a static poster when stopped, and reduced-motion preferences start the viewer on that poster. The large LOTUSim simulator recording remains an MP4 video with manual playback controls.
-
-## Team-size trajectories
-
-The visible “Exploration with Different Team Sizes” section uses the existing `lotusim-top-team-size.svg` from the CROSSING resource-page assets. It shows the same three recorded missions as the GIFs (3/4/5 UAVs), with per-UAV paths, time to 95% coverage and total team flight distance. These are single-mission examples, not a repeated team-size benchmark. The Motivation & Contributions section has been removed; the Method navigation link points directly to Training & Deployment.
-
-## Resource links and attribution
-
-The page no longer links to the offline benchmark evidence or training environment JSON, including their duplicate links in the hero and method sections. Archived assets and the saved report are retained. Related work now leads with FA-MARL and explicitly credits its frontier-assignment approach as the basis for this project’s 3D adaptation. The citation is taken from the locally saved Song and Yang ICCA 2026 paper, DOI `10.1109/ICCA69928.2026.11618240`.
+The page is adapted from the [Academic Project Page Template](https://github.com/eliahuhorwitz/Academic-project-page-template) (commit `d38af1ccae1ce82c3404d2820c4c646afd409f81`), which is derived from [Nerfies](https://nerfies.github.io/). The template's documentation and CC BY-SA 4.0 notice are kept in `docs/template-original-readme.md`. The visual layout is inspired by [C²-Explorer](https://robotics-star.com/C2-Explorer/); none of its images, authors or results are reused. Simulator imagery is from LOTUSim-Energy. The method builds on FA-MARL (Song and Yang, ICCA 2026, DOI [10.1109/ICCA69928.2026.11618240](https://doi.org/10.1109/ICCA69928.2026.11618240)). Research data and media keep their existing rights; the template license does not relicense them.
