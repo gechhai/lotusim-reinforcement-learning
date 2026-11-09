@@ -23,7 +23,6 @@ In a fixed simulated LOTUSim minefield, three UAVs ran 10 missions per method. T
 | Training and deployment pipeline | [Method](https://gechhai.github.io/lotusim-reinforcement-learning/#method) |
 | Benchmark against classical baselines | [Results](https://gechhai.github.io/lotusim-reinforcement-learning/#results) |
 | Mission replays and trajectories for 3, 4 and 5 UAVs | [Larger teams](https://gechhai.github.io/lotusim-reinforcement-learning/#team-sizes) |
-| Limitations and future work | [Limitations](https://gechhai.github.io/lotusim-reinforcement-learning/#limitations) |
 
 ## Repository layout
 

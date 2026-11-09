@@ -10,6 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://gechhai.github.io/lotusim-reinforcement-learning/">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="assets/bulma.min.css"><link rel="stylesheet" href="style.css">
 <script src="app.js" defer></script>
 </head>
@@ -19,11 +20,11 @@
 <section class="hero" aria-labelledby="project-title">
 <div class="hero-shade"></div>
 <div class="hero-inner">
-<span class="project-logo" role="img" aria-label="LOTUSim"></span>
+<img class="project-logo" src="assets/lotusim-logo.svg" width="446" height="99" alt="LOTUSim">
 <h1 id="project-title">Cooperative UAV Exploration<br>with Multi-Agent Reinforcement Learning</h1>
 <p class="hero-description">Learning the distance–information trade-off<br>from 3D voxel simulation to Unity sensing and PX4 flight.</p>
 <div class="publication-links"><a class="button is-rounded" href="#demonstrations"><span aria-hidden="true">▷</span> Video</a><a class="button is-rounded" href="#results"><span aria-hidden="true">▥</span> Results</a><a class="button is-rounded" href="https://irl-crossing-cnrs.github.io/projects/lotusim">LOTUSim ↗</a></div>
-<nav class="hero-nav" aria-label="Project sections"><a href="#abstract">Abstract</a><a href="#method">Method</a><a href="#results">Results</a><a href="#team-sizes">Larger teams</a><a href="#limitations">Limitations</a><a href="#resources">Resources</a></nav>
+<nav class="hero-nav" aria-label="Project sections"><a href="#abstract">Abstract</a><a href="#method">Method</a><a href="#results">Results</a><a href="#team-sizes">Larger teams</a><a href="#resources">Resources</a></nav>
 </div>
 <p class="scene-credit">Simulator imagery: LOTUSim-Energy</p>
 <a class="scroll-cue" href="#demonstrations" aria-label="Explore the project">⌄</a>
@@ -73,7 +74,6 @@
 <figure class="team-trajectories"><a href="assets/lotusim-top-team-size.svg" target="_blank" rel="noopener" aria-label="Open the full-size trajectories for three, four and five UAVs"><img src="assets/lotusim-top-team-size.svg" width="1432" height="499" loading="lazy" alt="Top-down recorded paths for three, four and five UAVs, with a different colour for each drone. The teams reach 95% coverage in 170, 116 and 129 seconds, travelling 827, 704 and 875 metres in total."></a><figcaption>Each colour traces one UAV; the dashed square marks the 125 × 125 m exploration area. Titles show time to 95% coverage and total team flight distance. <a href="assets/lotusim-top-team-size.svg" target="_blank" rel="noopener">Open full-size plots ↗</a></figcaption></figure>
 <p class="fine-print team-note">One mission is shown for each team size. These examples demonstrate execution with larger teams; they do not establish how performance scales with the number of UAVs.</p>
 </div></section>
-<section id="limitations" class="shell content-section two-column"><div><p class="eyebrow">Scope</p><h2>Limitations &amp; Future Work</h2></div><div><p>The recorded missions demonstrate that the trained exploration policy can operate with Unity range sensing and PX4 simulated flight.</p><p>Evaluation is still limited to the tested settings. Communication loss, noisy localization, broader environments and physical flight remain future work. Four- and five-UAV examples are single missions, so their times should not be read as a team-size benchmark.</p></div></section>
 <section id="resources" class="resources-band"><div class="shell content-section"><div class="section-top"><h2>Resources &amp; Related Work</h2><span class="small-label">Read further</span></div><div class="resource-columns"><div><h3>This project</h3><ul class="resource-list"><li><a href="https://irl-crossing-cnrs.github.io/projects/lotusim">LOTUSim at CROSSING <span>↗</span></a></li><li><a href="assets/demos/lotusim-map-inset-2x.mp4" download>Demonstration video <span>MP4 ↓</span></a></li><li><a href="https://github.com/gechhai/lotusim-reinforcement-learning">Website source <span>GitHub ↗</span></a></li></ul></div><div><h3>Related exploration methods</h3><p><strong>FA-MARL is the methodological starting point for this project.</strong> It learns how to balance travel distance and information gain within a frontier-based exploration pipeline. Our work adapts this approach from 2D ground-robot exploration to cooperative 3D UAV exploration and deployment in LOTUSim.</p><p class="fine-print">The works below inform the methodology and presentation; they are not additional baselines in the comparison table.</p><ul class="resource-list"><li><a href="https://doi.org/10.1109/ICCA69928.2026.11618240">FA-MARL <span>Paper ↗</span></a></li><li><a href="https://robotics-star.com/C2-Explorer/">C²-Explorer <span>Project page ↗</span></a></li><li><a href="https://github.com/Robotics-STAR-Lab/RACER">RACER <span>Project repository ↗</span></a></li><li><a href="https://arxiv.org/abs/2103.01955">MAPPO <span>Paper ↗</span></a></li></ul></div></div></div></section>
 </main>
 <footer class="shell"><p>Cooperative UAV Exploration in LOTUSim</p><p>Visual layout adapted from <a href="https://robotics-star.com/C2-Explorer/">C²-Explorer</a>, using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template">Academic Project Page Template</a> and <a href="https://nerfies.github.io/">Nerfies</a>. Website template: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p></footer>
