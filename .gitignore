@@ -6,3 +6,5 @@ artifacts/
 
 dist/
 
+# Local hosting config
+.openai/
