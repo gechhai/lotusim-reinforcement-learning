@@ -16,7 +16,7 @@ Open http://127.0.0.1:5174. No package installation or build is required.
 - `site/style.css`: responsive layout and typography.
 - `site/app.js`: replay selector (3, 4 and 5 UAVs).
 - `site/assets/replays/`: MP4 recordings and posters, approximately 1 MB per video.
-- `site/assets/pipeline.svg`: reviewed training/deployment figure.
+- `site/assets/pipeline.png`: reviewed training/deployment figure.
 - `.openai/hosting.json`: private preview hosting identity; contains no credentials.
 
 Videos are loaded only on demand, with native playback controls, no autoplay and local posters. Larger future recordings can use external hosting by changing the source URLs in `app.js` and the initial video in `index.html`.
