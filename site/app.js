@@ -1,7 +1,7 @@
 const missions = {
-  3: { time: '170 s', distance: '827 m', description: 'Three UAVs using the shared policy trained with three agents.' },
-  4: { time: '116 s', distance: '704 m', description: 'Four UAVs using the same actor, without retraining.' },
-  5: { time: '129 s', distance: '875 m', description: 'Five UAVs using the same actor, without retraining.' }
+  3: { time: '179 s', distance: '865 m', description: 'Three UAVs using the shared policy trained with three agents.' },
+  4: { time: '125 s', distance: '768 m', description: 'Four UAVs using the same actor, without retraining.' },
+  5: { time: '138 s', distance: '940 m', description: 'Five UAVs using the same actor, without retraining.' }
 };
 const replay = document.getElementById('mission-replay');
 const buttons = document.querySelectorAll('[data-team]');

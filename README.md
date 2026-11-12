@@ -14,7 +14,7 @@ A shared MAPPO policy teaches a team of UAVs to balance **travel distance** agai
 
 ![Training and deployment pipeline](site/assets/pipeline.png)
 
-In a fixed simulated LOTUSim minefield, three UAVs ran 10 missions per method. The learned policy reached 95% coverage in **203.0 ± 23.4 s**. The nearest-frontier baseline took 430.3 ± 50.7 s and Voronoi assignment took 436.3 ± 45.4 s. The learned policy also flew about 43% less total distance than nearest-frontier. These are simulation results only. The website gives full details and caveats.
+In a fixed simulated LOTUSim minefield, three UAVs ran 10 missions per method. The learned policy reached 95% coverage in **211.2 ± 23.5 s**. The nearest-frontier baseline took 433.5 ± 50.9 s and Voronoi assignment took 439.2 ± 45.4 s. The learned policy also flew about 41% less total distance than nearest-frontier. These are simulation results only. The website gives full details and caveats.
 
 | On the website | Link |
 |---|---|
